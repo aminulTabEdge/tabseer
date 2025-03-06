@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-import { ThemeProvider } from "./../providers/ThemeProvider";
+import ThemeProvider from "./../providers/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Tabseer Inc",
@@ -15,8 +15,8 @@ export type ChildrenType = {
 const RootLayout = ({ children }: ChildrenType) => {
   return (
     <>
-      <html lang="en" suppressHydrationWarning>
-        <head />
+      <html lang="en" suppressHydrationWarning={true}>
+        <link rel="icon" href="/favicon.svg" sizes="any" />
         <body>
           <ThemeProvider
             attribute="class"
