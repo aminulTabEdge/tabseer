@@ -21,7 +21,7 @@ const Navbar = () => {
       href: "/#wings",
       label: "Wings",
       icon: <Send className="inline-block mr-1" />,
-    }, // Use Send for PaperPlane
+    },
     {
       href: "/#contact",
       label: "Contact",
@@ -30,18 +30,20 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-gray-800 text-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <nav className=" bg-white  dark:bg-slate-900 text-black/75 dark:text-white shadow-lg sticky top-0 z-50">
+      <div className="container mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           {/* Left: Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0 text-xl font-bold">
-              <Image
-                src="/logo.svg"
-                alt="Tabseer logo"
-                width={160}
-                height={32}
-              />
+              <Link href="/">
+                <Image
+                  src="/logo.svg"
+                  alt="Tabseer logo"
+                  width={160}
+                  height={32}
+                />
+              </Link>
             </div>
           </div>
 
@@ -53,7 +55,7 @@ const Navbar = () => {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     {link.icon}
                     {link.label}

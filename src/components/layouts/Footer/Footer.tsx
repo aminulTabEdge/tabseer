@@ -1,75 +1,59 @@
-"use client";
-import React from "react";
+import Image from "next/image";
+import { Facebook, Linkedin } from "lucide-react"; // Import Lucid Icons
+import Link from "next/link";
+import CopyrightText from "./CopyrightText";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className="bg-slate-900 text-white py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap justify-between items-center">
-          {/* Left section: Links */}
-          <div className="flex flex-wrap gap-6 mb-6 sm:mb-0">
-            <div>
-              <h3 className="text-lg font-semibold">Company</h3>
-              <ul className="mt-2 space-y-2">
-                <li>
-                  <a href="/about" className="text-gray-300 hover:text-white">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/services"
-                    className="text-gray-300 hover:text-white"
-                  >
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a href="/careers" className="text-gray-300 hover:text-white">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a href="/contact" className="text-gray-300 hover:text-white">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold">Support</h3>
-              <ul className="mt-2 space-y-2">
-                <li>
-                  <a href="/faq" className="text-gray-300 hover:text-white">
-                    FAQ
-                  </a>
-                </li>
-                <li>
-                  <a href="/help" className="text-gray-300 hover:text-white">
-                    Help Center
-                  </a>
-                </li>
-                <li>
-                  <a href="/terms" className="text-gray-300 hover:text-white">
-                    Terms of Service
-                  </a>
-                </li>
-                <li>
-                  <a href="/privacy" className="text-gray-300 hover:text-white">
-                    Privacy Policy
-                  </a>
-                </li>
-              </ul>
-            </div>
+          {/* Left section: Company Logo */}
+          <div className="flex items-center gap-4 mb-6 sm:mb-0">
+            <Image
+              src="/logo.svg"
+              alt="Company Logo"
+              width={180}
+              height={60}
+              className="object-contain"
+            />
           </div>
 
-          {/* Right section: Copyright */}
-          <div className="text-center sm:text-right">
-            <p className="text-sm text-gray-400">
-              &copy; 2025 Your Company. All rights reserved.
-            </p>
+          {/* Middle section: Navigation Links */}
+          <div className="flex flex-wrap gap-6 mb-6 sm:mb-0">
+            <Link href="/#about" className="text-gray-300 hover:text-white">
+              About
+            </Link>
+            <Link href="/#wings" className="text-gray-300 hover:text-white">
+              Wings
+            </Link>
+            <Link href="/#contact" className="text-gray-300 hover:text-white">
+              Contact
+            </Link>
+          </div>
+
+          {/* Right section: Social Media Links */}
+          <div className="flex items-center gap-6 mb-6 sm:mb-0">
+            <Link
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Facebook className="text-gray-300 hover:text-white text-xl" />
+            </Link>
+            <Link
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin className="text-gray-300 hover:text-white text-xl" />
+            </Link>
           </div>
         </div>
+      </div>
+      {/* Bottom section: Copyright */}
+      <div className="text-center  border-t mt-8 max-w-6xl mx-auto border-white/20">
+        <CopyrightText />
       </div>
     </footer>
   );
