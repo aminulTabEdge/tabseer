@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { Home, Info, Send, Phone } from "lucide-react"; // Correct icon name for PaperPlane
+import { Home, Info, Send, Phone, DollarSign } from "lucide-react"; // Correct icon name for PaperPlane
 import ThemeToggleButton from "./ThemeToggleButton";
 import Image from "next/image";
 
@@ -23,6 +23,11 @@ const Navbar = () => {
       icon: <Send className="inline-block mr-1" />,
     },
     {
+      href: "/invest",
+      label: "Invest",
+      icon: <DollarSign className="inline-block mr-1" />,
+    },
+    {
       href: "/#contact",
       label: "Contact",
       icon: <Phone className="inline-block mr-1" />,
@@ -35,10 +40,20 @@ const Navbar = () => {
         <div className="relative flex items-center justify-between h-16">
           {/* Left: Logo */}
           <div className="flex items-center">
-            <div className="flex-shrink-0 text-xl font-bold">
+            <div className="flex-shrink-0 text-xl font-bold dark:hidden">
               <Link href="/">
                 <Image
                   src="/logo.svg"
+                  alt="Tabseer logo"
+                  width={160}
+                  height={32}
+                />
+              </Link>
+            </div>
+            <div className="flex-shrink-0 text-xl font-bold hidden dark:block">
+              <Link href="/">
+                <Image
+                  src="/logo-white.svg"
                   alt="Tabseer logo"
                   width={160}
                   height={32}

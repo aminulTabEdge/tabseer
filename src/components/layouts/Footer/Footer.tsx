@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Left section: Company Logo */}
           <div className="flex items-center gap-4 mb-6 sm:mb-0">
             <Image
-              src="/logo.svg"
+              src="/logo-white.svg"
               alt="Company Logo"
               width={180}
               height={60}

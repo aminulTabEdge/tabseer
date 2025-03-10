@@ -10,17 +10,16 @@ type ContainerType = {
 
 const Container = ({
   children,
-  backgroundColor,
-  className,
+  backgroundColor = "",
+  className = "",
   id,
 }: ContainerType) => {
-  const containerClass = !className && "container";
   return (
     <section
       id={id}
-      className={`${backgroundColor} py-8 lg:py-14 xl:py-16 2xl:py-24 px-2`}
+      className={clsx(backgroundColor, "py-8 lg:py-14 xl:py-16 2xl:py-20 px-2")}
     >
-      <div className={clsx(containerClass, "mx-auto")}>{children}</div>
+      <div className={clsx(" mx-auto", className)}>{children}</div>
     </section>
   );
 };
